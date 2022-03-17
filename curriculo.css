@@ -1,60 +1,107 @@
+:root{
+	--main-color: #9466FA;
+	--secondary-color: #6CC7F0;
+	--highlight-color: #5EDBC4;
+}
+
 *{
 	list-style-type: none;
 	
 }
 
-p{
-	font-family: 'Roboto', sans-serif;
+p, li{
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 ul{
 	padding-left: 0rem;
 }
 
-h1{
+:not(#headerInfos) > h1{
 	font-size: 1.5rem;
-	color: #5697C4;
-	font-family: 'Open Sans Condensed', sans-serif;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	position: relative;
+	padding: 0.5rem 0;
+	width: fit-content;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+	margin-bottom: 1.6rem;
 }
 
-h2{
+:not(#headerInfos) > h1::before{
+	position: absolute;
+	left: -10px;
+	top: 0;
+	height: 100%;
+	width: calc(100% + 6rem);
+	left: -5rem;
+	background-color: var(--secondary-color);
+	content: "";
+	z-index: -1;
+	box-shadow: 4px 4px 0 0 var(--main-color);
+	
+}
+
+:not(#headerInfos) > h2{
 	font-size: 1.2rem;
-	color: #406F91;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Assistant', sans-serif;
+	font-weight: 600;
 }
 
-h3{
-	color: #1E3545;
+:not(#headerInfos) > h3{
 	font-weight: bold;
 	margin-top: 1rem;
 	font-size: 1rem;
-	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Assistant', sans-serif;
 }
 
 hr{
-	border-top-color: rgba(30, 53, 69, 0.5)
+	border-top-color: var(--main-color)
 }
-
 #geral{
 	margin: 3rem auto;
 }
 
+#geral img#profileImg{
+	background-image: url(profile.jpg);
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+	box-shadow: -4px -4px 0 0 var(--highlight-color), 4px 4px 0 0 var(--main-color);
+	position: relative;
+	display: block;
+}
+#headerInfos hr{
+	background-color: var(--main-color);
+}
+
+#headerInfos h1.display-4{
+	font-size: 36pt;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color: var(--main-color);
+	background: transparent;
+}
+
+#headerInfos h1.display-4::before{
+	display: none;
+}
+
+
+#headerInfos h2.display-4{
+	font-size: 20pt;
+	font-family: 'Assistant', sans-serif;
+	font-weight: 600;
+	color: black;
+}
 
 .jobTitle{
 	font-weight: bold;
-	color: #5697C4;
+	color: var(--main-color);
 	position: relative;
 	display: block;
-	font-family: 'Open Sans Condensed', sans-serif;
-}
-
-.jobTitle::after{
-	position: absolute;
-	left: -10px;
-	top: 0;
-	height: 2rem;
-	border-left: 2px solid #5697C4;
-	content: "";
+	font-family: 'Assistant', sans-serif;
 }
 
 .timeStamp{
@@ -64,3 +111,16 @@ hr{
 	text-align: right
 }
 
+footer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+}
+
+@media(max-width: 768px){
+	#geral img#profileImg{
+		max-width: 50%;
+		text-align: center;
+	}
+}
