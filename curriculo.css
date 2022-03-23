@@ -28,6 +28,10 @@ section{
 	padding-top: 1.5rem;
 }
 
+section .row{
+	margin-bottom: 1.5rem;
+}
+
 .bg-light{
 	background-color: var(--light-color-transparent) !important;
 }
@@ -38,7 +42,6 @@ section{
 }
 
 #inicio{
-	background-image: url(img/bg01.jpg);
 	background-position: center;
 	background-size: cover;
 	min-height: 80vh;
@@ -99,7 +102,7 @@ img#profileImg{
 	height: 1.3rem;
 }
 
-#habilidades .skillBar span[style]{
+#habilidades .skillBar .bar{
 	display: block;
 	width: 50%;
 	height: 100%;
@@ -111,7 +114,7 @@ img#profileImg{
 	
 }
 
-#habilidades .skillBar span:not([style]){
+#habilidades .skillBar .label{
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -135,6 +138,7 @@ img#profileImg{
 	font-size: 1.2rem;
 	font-family: 'Assistant', sans-serif;
 	font-weight: 600;
+	color: var(--dark-color)
 }
 
 :not(#headerInfos) > h3{
@@ -164,11 +168,38 @@ img#profileImg{
 	text-align: right
 }
 
+#contato{
+	background-color: var(--dark-color);
+	min-height: 80vh;
+	color: var(--light-color);
+}
+
+#contato #contactImg{
+	width: 35%;
+	border-radius: 50%;
+	margin-bottom: 1.5rem;
+}
+
+#contato p{
+	margin: 0;
+}
+
+#contato .links a{
+	justify-content: center;
+    display: inline-flex;
+    text-align: center;
+	padding: 1rem;
+}
+
+#contato .links a img{
+	min-height: 2rem;
+}
 footer{
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 1rem;
+	background-color: var(--dark-color);
 }
 
 @media(max-width: 768px){
