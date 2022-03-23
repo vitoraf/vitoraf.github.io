@@ -172,6 +172,8 @@ img#profileImg{
 	background-color: var(--dark-color);
 	min-height: 80vh;
 	color: var(--light-color);
+	display: flex;
+	align-items: center;
 }
 
 #contato #contactImg{
@@ -207,4 +209,11 @@ footer{
 		max-width: 100vh;
 		text-align: center;
 	}
+
+	.timeStamp{
+		position: inherit;
+		margin-left: 1rem;
+	}
+	
+
 }
