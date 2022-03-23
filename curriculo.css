@@ -2,6 +2,9 @@
 	--main-color: #9466FA;
 	--secondary-color: #6CC7F0;
 	--highlight-color: #5EDBC4;
+	--light-color: #e9e9e9;
+	--dark-color: #232323;
+	--light-color-transparent: #e9e9e9e9;
 }
 
 *{
@@ -17,56 +20,34 @@ ul{
 	padding-left: 0rem;
 }
 
-:not(#headerInfos) > h1{
-	font-size: 1.5rem;
-	color: #fff;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: bold;
-	position: relative;
-	padding: 0.5rem 0;
-	width: fit-content;
-	text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-	margin-bottom: 1.6rem;
+body{
+	background: var(--light-color);
 }
 
-:not(#headerInfos) > h1::before{
-	position: absolute;
-	left: -10px;
-	top: 0;
-	height: 100%;
-	width: calc(100% + 6rem);
-	left: -5rem;
-	background-color: var(--secondary-color);
-	content: "";
-	z-index: -1;
-	box-shadow: 4px 4px 0 0 var(--main-color);
-	
+section{
+	padding-top: 1.5rem;
 }
 
-:not(#headerInfos) > h2{
-	font-size: 1.2rem;
-	font-family: 'Assistant', sans-serif;
-	font-weight: 600;
+.bg-light{
+	background-color: var(--light-color-transparent) !important;
 }
 
-:not(#headerInfos) > h3{
-	font-weight: bold;
-	margin-top: 1rem;
-	font-size: 1rem;
-	font-family: 'Assistant', sans-serif;
+.navbar-nav{
+	justify-content: space-between;
+	width: 100%;
 }
 
-hr{
-	border-top-color: var(--main-color)
-}
-#geral{
-	margin: 3rem auto;
-}
-
-#geral img#profileImg{
-	background-image: url(profile.jpg);
-	background-size: cover;
+#inicio{
+	background-image: url(img/bg01.jpg);
 	background-position: center;
+	background-size: cover;
+	min-height: 80vh;
+	display: flex;
+	align-items: center;
+	transition: background-image 2s ease;
+}
+
+img#profileImg{
 	border-radius: 50%;
 	box-shadow: -4px -4px 0 0 var(--highlight-color), 4px 4px 0 0 var(--main-color);
 	position: relative;
@@ -93,7 +74,79 @@ hr{
 	font-size: 20pt;
 	font-family: 'Assistant', sans-serif;
 	font-weight: 600;
-	color: black;
+	color: var(--light-color);
+}
+
+#headerInfos p{
+	color: var(--light-color);
+}
+
+
+#habilidades h2{
+	font-family: 'Montserrat' !important;
+	font-weight: bold !important;
+}
+
+#habilidades .skillBar{
+	display: flex;
+	align-items: center;
+	margin: 0 0 1rem;
+	background-color: #fff;
+	justify-content: center;
+	border-radius: 1rem;
+	position: relative;
+	overflow: hidden;
+	height: 1.3rem;
+}
+
+#habilidades .skillBar span[style]{
+	display: block;
+	width: 50%;
+	height: 100%;
+	background-color: var(--secondary-color);
+	position: absolute;
+	left: 0;
+	top: 0;
+	text-align: center;
+	
+}
+
+#habilidades .skillBar span:not([style]){
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: -1px;
+	text-align: center;
+	vertical-align: center;
+}
+
+:not(#headerInfos) > h1{
+	
+	color: var(--main-color);
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	position: relative;
+	padding: 0.5rem 0;
+	width: fit-content;
+	margin-bottom: 1.6rem;
+}
+
+:not(#headerInfos) > h2{
+	font-size: 1.2rem;
+	font-family: 'Assistant', sans-serif;
+	font-weight: 600;
+}
+
+:not(#headerInfos) > h3{
+	font-weight: bold;
+	margin-top: 1rem;
+	font-size: 1rem;
+	font-family: 'Assistant', sans-serif;
+}
+
+.companyImg{
+	width: 100%;
+	border-radius: 100%;
 }
 
 .jobTitle{
@@ -119,8 +172,8 @@ footer{
 }
 
 @media(max-width: 768px){
-	#geral img#profileImg{
-		max-width: 50%;
+	img#profileImg{
+		max-width: 100vh;
 		text-align: center;
 	}
 }

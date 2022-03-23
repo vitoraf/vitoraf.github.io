@@ -1,123 +1,212 @@
 <!-- Desenvolvido por Vitor Alexandre Ferreira -->
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Vitor Ferreira</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Assistant&family=Montserrat:wght@400;700&family=Nunito+Sans&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Assistant&family=Montserrat:wght@400;700&family=Nunito+Sans&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="curriculo.css">
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 
 </head>
+
 <body>
-	<div id="geral">
-		<!-- informações pessoais -->
+	<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-2 col-12" >
-					<img src="profile.jpg" alt="" id="profileImg" width="100%">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="#">Início</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#habilidades">Habilidades</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#experiencia">Minhas Experiências</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#formacao">Minha Formação</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#projetos">Projetos</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contato">Contato</a>
+					</li>
+
+			</div>
+		</div>
+	</nav>
+	<!-- informações pessoais -->
+	<section class="container-fluid" id="inicio">
+		<div class="container">
+			<div class="row d-flex align-items-center">
+				<div class="col-md-4 col-12">
+					<img src="img/profile.jpg" alt="" id="profileImg" width="100%">
 				</div>
-				<div class="col-md-10 col-12" id="headerInfos">
+				<div class="col-md-8 col-12" id="headerInfos">
 					<h1 class="display-4">Vitor Alexandre Ferreira</h1>
-					<h2 class="display-4">Designer Web, Desenvolvedor Front-end</h2>
-					<p>vitoralexandreferreira@gmail.com<br>
-					(11) 968600330<br>
-					São Paulo, SP</p>
-					<hr>
+					<h2 class="display-4">Web Designer, UX/UI Designer, Front-end Developer</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque suscipit felis quis urna
+						sagittis, non porta sapien vestibulum. Donec nec ex vel metus placerat convallis vel eget nisl.
+						Fusce rutrum lobortis ligula. Integer ullamcorper tortor in lorem porta, non dapibus dui
+						efficitur. Nulla ornare turpis nulla, consectetur cursus eros tempus sed. Nullam commodo blandit
+						turpis, in malesuada ligula mollis condimentum. Fusce vehicula nunc in neque eleifend, a luctus
+						tortor tristique. </p>
 				</div>
 			</div>
 		</div>
-		
-		<!-- informações  -->
-	
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-12">
-					<h1>Habilidades</h1>
-					<h2>Desenvolvimento</h2>
-					<ul>
-						<li>HTML + CSS</li>
-						<li>Bootstrap</li>
-						<li>Javascript</li>
-					</ul>
 
-					<h2>Ferramentas</h2>
-					<ul>
-						<li>Photoshop</li>
-						<li>Illustrator</li>
-						<li>Adobe XD</li>
-						<li>Premiere Pro</li>
-						<li>After Effects</li>
-					</ul>
-					<h2>Qualidades</h2>
-					<ul>
-						<li>Foco em responsividade</li>
-						<li>Aprendizado Rápido</li>
-						<li>Trabalho em equipe</li>
-					</ul>
+	</section>
 
-					<h2>Idiomas</h2>
-					<ul>
-						<li>Inglês (Avançado)</li>
-						<!-- <li>Espanhol (Básico)</li> -->
-					</ul>
-				</div>
-					
-					
-					
+	<!-- informações  -->
 
-				
-				<div class="col-md-9 col-12">
-					<h1>Experiência Profissional</h1>
-					<h2>Ânima educação</h2>
-					<span class="jobTitle"><em>Web designer PL</em><span class="timeStamp">AGO 2021| atualmente</span></span>
-					
-					<p>Desenvolvimento front-end de aplicações internas e externas de larga escala para ambiente de EAD, com foco em responsividade e experiência do usuário. Design de interfaces e prototipagem.</p>
+	<section class="container" id="habilidades">
+		<h1>Habilidades</h1>
+		<div class="row">
+			<div class="col-lg-3 col-sm-6 col-12">
 
-					<h2>Laureate Digital</h2>
-					<span class="jobTitle"><em>Web designer JR</em><span class="timeStamp">JUL 2017 | AGO 2021</span></span>
-					
-					<p>Desenvolvimento front-end de aplicações internas e externas de larga escala para ambiente de EAD, com foco em responsividade e experiência do usuário. Design de interfaces e prototipagem.</p>
-
-					<h2>Universidade Anhembi Morumbi</h2>
-					<span class="jobTitle"><em>Web designer JR</em><span class="timeStamp">AGO 2015 | JUL 2017</span></span>
-					<p>Desenvolvimento de identidade visual para materiais educacionais. Produção, edição e finalização de vídeo-aulas. Desenvolvimento de materiais educacionais e mídias para disciplinas EAD.</p>
-
-					<h2> Universidade Anhembi Morumbi</h2>
-					<span class="jobTitle"><em>Estagiário Web designer</em><span class="timeStamp">AGO 2014 | AGO 2015</span></span>
-					<p>Auxílio em produção de vídeo-animações para vídeo-aulas. Participação no desenvolvimento de materiais educacionais e midias para disciplinas EAD.</p>
-					<br>
-					<br>
-					<h1>Formação</h1>
-					<h2>Pós graduação</h2><span class="jobTitle"><em>Especialização em Experiência do Usuário</em><span class="timeStamp">2021 | 2022</span></span>
-					<p>Levantamento de requisitos, usabilidade, prototipagem, modelos ágeis, </p>
-					
-					<h2>Pós graduação</h2><span class="jobTitle"><em>Especialização em Gestão de Projetos e Portfólios</em><span class="timeStamp">2018 | 2019</span></span>
-					<p>Organização de projetos, gestão de pessoas, gestão estratégica.</p>
-					
-					<h2>Pós graduação</h2>
-					<span class="jobTitle"><em>Especialização em Cinema e Multimeios</em><span class="timeStamp">2017 | 2018</span></span>
-					<p>Direção de arte, montagem e edição, edição de som, roteiro, história do cinema.</p>
-
-					<h2>Graduação</h2>
-					<span class="jobTitle"><em>Design Digital</em><span class="timeStamp">2012 | 2016</span></span>
-					<p>Linguagem visual, hipermídia, design de interação, audiovisual, design de navegação, design thinking, IOT, usabilidade, desenvolvimento.</p>
-				</div>
+				<h2>Desenvolvimento</h2>
+				<ul>
+					<li class="skillBar">
+						<span style="width: 95%"></span>
+						<span>HTML + CSS</span>
+					</li>
+					<li class="skillBar"><span style="width: 75%"></span><span>Bootstrap</span></li>
+					<li class="skillBar"><span style="width: 50%"></span><span>Javascript</span></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-sm-6 col-12">
+				<h2>Ferramentas</h2>
+				<ul>
+					<li class="skillBar"><span style="width: 60%"></span><span>Photoshop</span></li>
+					<li class="skillBar"><span style="width: 70%"></span><span>Illustrator</span></li>
+					<li class="skillBar"><span style="width: 50%"></span><span>Adobe XD</span></li>
+					<li class="skillBar"><span style="width: 60%"></span><span>Premiere Pro</span></li>
+					<li class="skillBar"><span style="width: 40%"></span><span>After Effects</span></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-sm-6 col-12">
+				<h2>Soft Skills</h2>
+				<ul>
+					<li class="skillBar"><span style="width: 80%"></span><span>Foco em responsividade</span></li>
+					<li class="skillBar"><span style="width: 90%"></span><span>Aprendizado Rápido</span></li>
+					<li class="skillBar"><span style="width: 80%"></span><span>Trabalho em equipe</span></li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-sm-6 col-12">
+				<h2>Idiomas</h2>
+				<ul>
+					<li class="skillBar"><span style="width: 75%"></span><span>Inglês</span></li>
+					<li class="skillBar"><span style="width: 30%"></span><span>Espanhol</span></li>
+				</ul>
 			</div>
 
+
+
+	</section>
+	<section class="container" id="experiencia">
+		<h1>Experiência Profissional</h1>
+		<div class="row">
+			<div class="col-1">
+				<img class="companyImg" src="img/anima.jpg">
+			</div>
+			<div class="col-11">
+				<h2>Ânima educação</h2>
+				<span class="jobTitle"><em>Web designer PL</em><span class="timeStamp">AGO 2021|
+						atualmente</span></span>
+
+				<p>Desenvolvimento front-end de aplicações internas e externas de larga escala para ambiente de EAD, com
+					foco em responsividade e experiência do usuário. Design de interfaces e prototipagem.</p>
+			</div>
 		</div>
-	</div>
+		<div class="row">
+			<div class="col-1">
+				<img class="companyImg" src="img/laureate.jpg">
+			</div>
+			<div class="col-11">
+				<h2>Laureate Digital</h2>
+				<span class="jobTitle"><em>Web designer JR</em><span class="timeStamp">JUL 2017 | AGO 2021</span></span>
+
+				<p>Desenvolvimento front-end de aplicações internas e externas de larga escala para ambiente de EAD, com
+					foco em responsividade e experiência do usuário. Design de interfaces e prototipagem.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-1">
+				<img class="companyImg" src="img/anhembi.jpg">
+			</div>
+			<div class="col-11">
+				<h2>Universidade Anhembi Morumbi</h2>
+				<span class="jobTitle"><em>Web designer JR</em><span class="timeStamp">AGO 2015 | JUL 2017</span></span>
+				<p>Desenvolvimento de identidade visual para materiais educacionais. Produção, edição e finalização de
+					vídeo-aulas. Desenvolvimento de materiais educacionais e mídias para disciplinas EAD.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-1">
+				<img class="companyImg" src="img/anhembi.jpg">
+			</div>
+			<div class="col-11">
+				<h2> Universidade Anhembi Morumbi</h2>
+				<span class="jobTitle"><em>Estagiário Web designer</em><span class="timeStamp">AGO 2014 | AGO
+						2015</span></span>
+				<p>Auxílio em produção de vídeo-animações para vídeo-aulas. Participação no desenvolvimento de materiais
+					educacionais e midias para disciplinas EAD.</p>
+				<br>
+			</div>
+		</div>
+	</section>
+	<section class="container" id="formacao">
+		<br>
+		<h1>Formação</h1>
+		<h2>Pós graduação</h2><span class="jobTitle"><em>Especialização em Experiência do Usuário</em><span
+				class="timeStamp">2021 | 2022</span></span>
+		<p>Levantamento de requisitos, usabilidade, prototipagem, modelos ágeis, </p>
+
+		<h2>Pós graduação</h2><span class="jobTitle"><em>Especialização em Gestão de Projetos e
+				Portfólios</em><span class="timeStamp">2018 | 2019</span></span>
+		<p>Organização de projetos, gestão de pessoas, gestão estratégica.</p>
+
+		<h2>Pós graduação</h2>
+		<span class="jobTitle"><em>Especialização em Cinema e Multimeios</em><span class="timeStamp">2017 |
+				2018</span></span>
+		<p>Direção de arte, montagem e edição, edição de som, roteiro, história do cinema.</p>
+
+		<h2>Graduação</h2>
+		<span class="jobTitle"><em>Design Digital</em><span class="timeStamp">2012 | 2016</span></span>
+		<p>Linguagem visual, hipermídia, design de interação, audiovisual, design de navegação, design thinking,
+			IOT, usabilidade, desenvolvimento.</p>
+	</section>
+	<section class="container" id="projetos">
+
+	</section>
+	<section class="container" id="contato">
+
+	</section>
+
 	<footer>
-		<img src="logo.svg" alt="Logo pessoal" width="100px">
+		<img src="img/logo.svg" alt="Logo pessoal" width="100px">
 	</footer>
-	
-	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="script.js"></script>
 </body>
+
 </html>
