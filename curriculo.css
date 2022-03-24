@@ -52,7 +52,7 @@ section .row{
 
 img#profileImg{
 	border-radius: 50%;
-	box-shadow: -4px -4px 0 0 var(--highlight-color), 4px 4px 0 0 var(--main-color);
+	box-shadow: -8px -8px 0 0 var(--highlight-color), 8px 8px 0 0 var(--main-color);
 	position: relative;
 	display: block;
 }
@@ -84,6 +84,9 @@ img#profileImg{
 	color: var(--light-color);
 }
 
+#headerInfos *{
+	margin-bottom: 1.5rem;
+}
 
 #habilidades h2{
 	font-family: 'Montserrat' !important;
@@ -106,7 +109,7 @@ img#profileImg{
 	display: block;
 	width: 50%;
 	height: 100%;
-	background-color: var(--secondary-color);
+	background-color: var(--highlight-color);
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -124,7 +127,6 @@ img#profileImg{
 }
 
 :not(#headerInfos) > h1{
-	
 	color: var(--main-color);
 	font-family: 'Montserrat', sans-serif;
 	font-weight: bold;
@@ -184,6 +186,11 @@ img#profileImg{
 
 #contato p{
 	margin: 0;
+	
+}
+
+#contato p .mail{
+	color: var(--light-color);
 }
 
 #contato .links a{
@@ -191,11 +198,18 @@ img#profileImg{
     display: inline-flex;
     text-align: center;
 	padding: 1rem;
+	border-radius: 8px;
 }
 
 #contato .links a img{
-	min-height: 2rem;
+	height: 2rem;
+	transition: all;
 }
+
+#contato .links a:hover {
+	background-color:  #e9e9e915;
+}
+
 footer{
 	display: flex;
 	align-items: center;
