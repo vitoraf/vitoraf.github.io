@@ -21,7 +21,7 @@
       <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" id="sideNav">
         <button type="button" class="btn btn-primary" onclick="clearScore()"><i
             class="fa-solid fa-arrow-rotate-left"></i> Zerar placar</button>
-        <button type="button" class="btn btn-primary" onclick="showRemovePlayer()"><i class="fa-solid fa-trash"></i> Remover
+        <button type="button" class="btn btn-primary" onclick="showRemovePlayer()" id="removeBtn"><i class="fa-solid fa-trash"></i> Remover
           jogador</button>
       </div>
     </aside>
@@ -54,12 +54,16 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <div id="avatars">
+          <span>Escolha um avatar</span><br>
+          <div class="row" id="avatars">
             
           </div>
-          <label for="playerInput">Nome:
+          <div id="nameContainer">
+            <label for="playerInput">Nome:<br>
             <input type="text" id="playerInput" onkeypress="check(event)">
           </label>
+          </div>
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>

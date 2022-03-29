@@ -118,10 +118,7 @@ header {
 
 #avatars{
     margin-bottom: 1rem;
-}
-
-.modal-dialog{
-    min-width: 520px;
+    display: flex;
 }
 
 #avatars .avatarListItem{
@@ -133,6 +130,8 @@ header {
   margin: .5rem;
   cursor: pointer;
   transition: all 0.25s ease;
+  background-position: center;
+  background-size: cover;
 }
 
 #avatars .avatarListItem:hover, #avatars .avatarListItem:focus, #avatars .avatarListItem:active{
@@ -141,4 +140,43 @@ header {
 
 #avatars .avatarListItem.selected{
     box-shadow: 0 0 0 5px var(--dark-color);
+}
+
+#nameContainer{
+  display: flex;
+}
+
+#nameContainer label{
+  flex: 1;
+}
+
+#nameContainer input{
+  width: 100%;
+}
+
+@media screen and (min-width:  520px){
+  .modal-dialog{
+    min-width: 520px;
+  }
+  
+}
+
+@media screen and (max-width:  768px){
+  #avatars .avatarListItem{
+    width: calc(33% - 1rem);
+    padding-bottom: calc(33% - 1rem);
+  }
+  
+
+}
+
+@media screen and (max-width:  360px){
+  #menu-container #sideNav{
+    width: 80%;
+  }
+
+  #menu-container.open #menuToggle{
+    right: 0 !important;
+  }
+
 }

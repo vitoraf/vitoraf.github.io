@@ -7,8 +7,13 @@ var menu = document.getElementById('menu-container');
 var remove = false;
 var avatars = ['../img/avatars/female_main.svg','../img/avatars/female_secondary.svg','../img/avatars/female_highlight.svg','../img/avatars/male_main.svg','../img/avatars/male_secondary.svg','../img/avatars/male_highlight.svg']
 var imgURL;
+var avatarIsSet = false;
 function addPlayer() {
-    
+    //console.log(avatarIsSet)
+    if(avatarIsSet == false) {
+        imgURL = parseInt(Math.random() * avatars.length);
+        avatarIsSet = true;
+    }
     //console.log(imgURL)
     playerModal.hide();
     //console.log(playerInput.value);
@@ -17,7 +22,8 @@ function addPlayer() {
     players.push(window[playerInput.value]);
     playerInput.value = "";
     showPlayers();
-    //console.log(players)
+    clearSelected();
+    
 }
 
 function showPlayers() {
@@ -26,8 +32,13 @@ function showPlayers() {
     players.sort((a, b) => b.vitorias - a.vitorias);
     for (let i = 0; i < players.length; i++) {
         elemento += "<div class='row player'>";
+        if(remove == false){
+            elemento += "<div class='col-md-10 col-8'><img class='avatar' src='"+players[i].img+"'>" + players[i].nome + "<button type='button' onclick='removePlayer(" + i + ")' class='removePlayerBtn bg-danger' style='display:none;'><i class='fa-solid fa-trash'></i></button></div>";
+        }else{
+            elemento += "<div class='col-md-10 col-8'><img class='avatar' src='"+players[i].img+"'>" + players[i].nome + "<button type='button' onclick='removePlayer(" + i + ")' class='removePlayerBtn bg-danger' style='display:flex;'><i class='fa-solid fa-trash'></i></button></div>";
+        }
         //elemento += "<div class='col-md-10 col-8'>" + players[i].nome + "<button type='button' onclick='removePlayer(" + i + ")' class='removePlayerBtn bg-danger' style='display:none;'><i class='fa-solid fa-trash'></i></button></div>";
-        elemento += "<div class='col-md-10 col-8'><img class='avatar' src='"+players[i].img+"'>" + players[i].nome + "<button type='button' onclick='removePlayer(" + i + ")' class='removePlayerBtn bg-danger' style='display:none;'><i class='fa-solid fa-trash'></i></button></div>";
+        
         elemento += "<div class='col-md-2 col-4 d-flex align-items-center justify-contents-center'><button type='button' onclick='removeVitoria(" + i + ")'><i class='fa-solid fa-minus'></i></button><span>" + players[i].vitorias + "</span><button type='button' onclick='addVitoria(" + i + ")'><i class='fa-solid fa-plus'></i></button></div>";
         elemento += "</div>";
         elemento += "</div>";
@@ -36,7 +47,7 @@ function showPlayers() {
 
     playersArea.innerHTML = elemento;
     localStorage.setItem('playerList', JSON.stringify(players));
-    remove = false;
+    avatarIsSet = false;
 }
 
 function addVitoria(n) {
@@ -76,32 +87,35 @@ function clearScore() {
 
 function showRemovePlayer() {
     var btnRemove = document.getElementsByClassName('removePlayerBtn');
-    
+    var showRemoveBtn = document.getElementById('removeBtn');
     if (remove == false){
         for(let i = 0; i < btnRemove.length;i++){
             btnRemove[i].style.display = "flex";
-             remove = true;
         }
+        remove = true;
+        showRemoveBtn.innerHTML = "<i class='fa-solid fa-check'></i> Remover jogador"
+        showRemoveBtn.classList.add('btn-success');
         //console.log('remove on')
     }else{
         for(let i = 0; i < btnRemove.length;i++){
             btnRemove[i].style.display = "none"; 
              remove = false;
         }
+        showRemoveBtn.innerHTML = "<i class='fa-solid fa-trash'></i> Remover jogador"
+        showRemoveBtn.classList.remove('btn-success');
         //console.log('remove off')
     }
-   toggleMenu();
 }
 
 function removePlayer(n){
-    console.log(players[n])
+    //console.log(players[n])
     players.splice(n, 1);
     showPlayers();
 }
 
 function setAvatar(n){
     var avatarList = document.getElementsByClassName('avatarListItem');
-    console.log(avatarList[n])
+    //console.log(avatarList[n])
     for(let i =0;i<avatarList.length;i++){
         if(avatarList[i].classList.contains('selected')){
             avatarList[i].classList.remove('selected');
@@ -109,12 +123,22 @@ function setAvatar(n){
     }
     avatarList[n].classList.add('selected');
     imgURL = n;
+    avatarIsSet = true;
 }
 
 modal.addEventListener('shown.bs.modal', function () {
     playerInput.focus();
 
 })
+
+function clearSelected(){
+    var avatarList = document.getElementsByClassName('avatarListItem');
+    for(let i =0;i<avatarList.length;i++){
+        if(avatarList[i].classList.contains('selected')){
+            avatarList[i].classList.remove('selected');
+        }
+    }
+}
 
 function check(e) {
     if (e.key === "Enter") {
@@ -133,9 +157,9 @@ window.onload = function(){
     }
 
     var avatarDiv = document.getElementById("avatars");
-    var el = "<span>Escolha um avatar</span><br>";
+    var el = "";
     for (let i = 0; i < avatars.length; i++) {
-        el += "<img src='"+ avatars[i] + "' class='avatarListItem' onclick='setAvatar("+i+")'>";
+        el += "<div style='background-image:url("+ avatars[i] + ")' class='col-md-2 col-3 avatarListItem' onclick='setAvatar("+i+")'></div>";
         
     }
     avatarDiv.innerHTML = el;
