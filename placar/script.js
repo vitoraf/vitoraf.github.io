@@ -48,6 +48,7 @@ function showPlayers() {
     playersArea.innerHTML = elemento;
     localStorage.setItem('playerList', JSON.stringify(players));
     avatarIsSet = false;
+    toggleDisableBtn();
 }
 
 function addVitoria(n) {
@@ -99,8 +100,8 @@ function showRemovePlayer() {
     }else{
         for(let i = 0; i < btnRemove.length;i++){
             btnRemove[i].style.display = "none"; 
-             remove = false;
-        }
+        } 
+        remove = false;
         showRemoveBtn.innerHTML = "<i class='fa-solid fa-trash'></i> Remover jogador"
         showRemoveBtn.classList.remove('btn-success');
         //console.log('remove off')
@@ -126,10 +127,7 @@ function setAvatar(n){
     avatarIsSet = true;
 }
 
-modal.addEventListener('shown.bs.modal', function () {
-    playerInput.focus();
 
-})
 
 function clearSelected(){
     var avatarList = document.getElementsByClassName('avatarListItem');
@@ -146,7 +144,24 @@ function check(e) {
         //modal.modal('hide');
     }
 }
-var urlImg;
+
+function toggleDisableBtn(){
+    var showRemoveBtn = document.getElementById('removeBtn');
+    if(players.length > 0){
+     showRemoveBtn.disabled = false;
+        
+    }else{
+        showRemoveBtn.disabled = true;
+        showRemoveBtn.innerHTML = "<i class='fa-solid fa-trash'></i> Remover jogador"
+        showRemoveBtn.classList.remove('btn-success');
+        remove = false;
+    }
+}
+
+modal.addEventListener('shown.bs.modal', function () {
+    playerInput.focus();
+
+})
 
 window.onload = function(){
     if(JSON.parse(localStorage.getItem('playerList'))){
@@ -164,4 +179,5 @@ window.onload = function(){
     }
     avatarDiv.innerHTML = el;
     //console.log(avatarDiv)
+
 }
