@@ -12,8 +12,12 @@ body {
   background: #e9e9e9;
 }
 
-#main {
-  display: flex;
+ #main {
+  text-align: center;
+  background-image: linear-gradient(#e9e9e9e9, #e9e9e9e9), url('undraw_playing_cards_cywn.svg') ;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 header {
@@ -189,6 +193,10 @@ header h1{
 
 #nameContainer input{
   width: 100%;
+}
+
+.img-center{
+  margin: 4rem auto;
 }
 
 @media screen and (min-width:  520px){
