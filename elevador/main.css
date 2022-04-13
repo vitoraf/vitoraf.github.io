@@ -1,0 +1,27 @@
+#elevador {
+    display: flex;
+  }
+  
+  .elv {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  li {
+    list-style-type: none;
+    display: block;
+    padding-right: 10px;
+    width: fit-content;
+  }
+  
+  li button {
+    margin-right: 10px;
+  }
+  
+  li.current {
+    background: red;
+  }
+  
+  .call button{
+    color: red;
+    text-shadow: 0 0 5px red;
+  }

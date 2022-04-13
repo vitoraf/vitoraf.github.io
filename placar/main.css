@@ -30,6 +30,7 @@ header h1{
   position: fixed;
   height: 100%;
   width: 280px;
+  z-index: 1;
 }
 
 #menu-container.closed {
