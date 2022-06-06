@@ -170,6 +170,20 @@ img#profileImg{
 	text-align: right
 }
 
+#projetos .card{
+	padding-left: 0;
+	padding-right: 0;
+	cursor: pointer;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+	transition: box-shadow 0.25s ease;
+}
+
+#projetos .card:hover{
+	box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+
 #contato{
 	background-color: var(--dark-color);
 	min-height: 80vh;
@@ -231,3 +245,4 @@ footer{
 	
 
 }
+
