@@ -1,5 +1,5 @@
 :root{
-	--main-color: #9466FA;
+	--main-color: #6956B2;
 	--secondary-color: #6CC7F0;
 	--highlight-color: #5EDBC4;
 	--light-color: #e9e9e9;
@@ -88,6 +88,7 @@ img#profileImg{
 	margin-bottom: 1.5rem;
 }
 
+
 #habilidades h2{
 	font-family: 'Montserrat' !important;
 	font-weight: bold !important;
@@ -114,6 +115,7 @@ img#profileImg{
 	left: 0;
 	top: 0;
 	text-align: center;
+	transition: 1s ease .5s;
 	
 }
 
@@ -170,6 +172,58 @@ img#profileImg{
 	text-align: right
 }
 
+/* #experiencia .row:first-of-type{
+	transform: translate(-150%, 0);
+	transition: transform 1s ease .5s;
+	
+}
+
+#experiencia .row + .row{
+	transform: translate(-150%, 0);
+	transition: transform 1s ease .6s;
+	
+}
+
+#experiencia .row + .row + .row{
+	transform: translate(-150%, 0);
+	transition: transform 1s ease .7s;
+}
+
+#experiencia .row + .row + .row + .row{
+	transform: translate(-150%, 0);
+	transition: transform 1s ease .8s;
+}
+
+#experiencia.onscreen .row{
+	transform: translate(0, 0) !important;
+}
+
+#formacao .row:first-of-type{
+	transform: translate(-200%, 0);
+	transition: transform 1s ease .5s;
+	
+}
+
+#formacao .row + .row{
+	transform: translate(-200%, 0);
+	transition: transform 1s ease .6s;
+	
+}
+
+#formacao .row + .row + .row{
+	transform: translate(-200%, 0);
+	transition: transform 1s ease .7s;
+}
+
+#formacao .row + .row + .row + .row{
+	transform: translate(-200%, 0);
+	transition: transform 1s ease .8s;
+}
+
+#formacao.onscreen .row{
+	transform: translate(0, 0) !important;
+} */
+
 #projetos .card{
 	padding-left: 0;
 	padding-right: 0;
@@ -224,6 +278,29 @@ img#profileImg{
 	background-color:  #e9e9e915;
 }
 
+/* #habilidades, #experiencia, #formacao, #projetos{
+	opacity: 0;
+	transition: 1s ease;
+}
+
+
+#habilidades.onscreen, #experiencia.onscreen, #formacao.onscreen, #projetos.onscreen{
+	opacity: 1;
+} */
+
+/* .parallax-parent{
+	background-image: linear-gradient(rgba(233, 233, 233, 0.95),rgba(233, 233, 233, 0.95)),url(img/bg_doodle.png) ;
+	background-size: 400px;
+	overflow: hidden;
+}*
+
+.parallaxParent > * {
+	height: 200%;
+	position: relative;
+	top: -100%;
+} */
+
+
 footer{
 	display: flex;
 	align-items: center;
@@ -244,5 +321,12 @@ footer{
 	}
 	
 
+}
+
+@media only print{
+	#habilidades, #experiencia, #formacao, #projetos, #contato{
+		opacity: 1;
+	}
+	
 }
 
