@@ -1,19 +1,44 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Estudar javascript",
-      "completed": true
+      "title": "Arroz",
+      "completed": false,
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Estudar Vue",
-      "completed": false
+      "title": "Feijão",
+      "completed": false,
+      "id": 2
     },
     {
-      "id": 3,
-      "title": "Estudar composition API",
-      "completed": false
+      "title": "Leite",
+      "completed": true,
+      "id": 3
+    },
+    {
+      "title": "Pão",
+      "completed": true,
+      "id": 4
+    },
+    {
+      "title": "Requeijão",
+      "completed": true,
+      "id": 5
+    },
+    {
+      "title": "Frutas",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "title": "Carne",
+      "completed": false,
+      "id": 7
+    },
+    {
+      "title": "Ovos",
+      "completed": false,
+      "id": 8
     }
   ]
 }
