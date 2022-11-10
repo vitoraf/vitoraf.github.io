@@ -1,44 +1,29 @@
 {
   "todos": [
     {
-      "title": "Arroz",
+      "title": "Arroz 🍙",
       "completed": false,
       "id": 1
     },
     {
-      "title": "Feijão",
+      "title": "Macarrão 🍝",
       "completed": false,
       "id": 2
     },
     {
-      "title": "Leite",
-      "completed": true,
+      "title": "😍😍",
+      "completed": false,
       "id": 3
     },
     {
-      "title": "Pão",
-      "completed": true,
+      "title": "Comprar cigarro",
+      "completed": false,
       "id": 4
     },
     {
-      "title": "Requeijão",
-      "completed": true,
+      "title": "dormir",
+      "completed": false,
       "id": 5
-    },
-    {
-      "title": "Frutas",
-      "completed": false,
-      "id": 6
-    },
-    {
-      "title": "Carne",
-      "completed": false,
-      "id": 7
-    },
-    {
-      "title": "Ovos",
-      "completed": false,
-      "id": 8
     }
   ]
 }

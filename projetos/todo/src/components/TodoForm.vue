@@ -8,14 +8,15 @@ py-3 pr-3"
 >
 
 
-
+<button class="emoji-button" @click.stop.prevent="showEmojiToggle" type="button">
+    <fa :icon="['far', 'face-smile']"></fa>
+</button>
         <button class="text-green-400 text-xs font-semibold 
 focus:outline-none" type="submit" >
             ADICIONAR
         </button>
-    
     </form>
-    <EmojiPicker />
+    <EmojiPicker v-if="showEmoji" @emoji_click="addEmoji"/>
 </template>
 <script>
 import EmojiPicker from '@/components/EmojiPicker.vue'
@@ -26,22 +27,47 @@ export default {
     },
     data() {
         return {
-            title: ''
+            title: '',
+            showEmoji: false
         }
     },
     methods: {
         addTodo() {
-            if(!this.title){
+            if (!this.title) {
                 return false
             }
-            this.$store.dispatch('addTodo',{
+            if (this.showEmoji) {
+                this.showEmojiToggle()
+            }
+            this.$store.dispatch('addTodo', {
                 title: this.title,
                 completed: false
-            }).finally(()=>{
+            }).finally(() => {
                 this.title = ''
             })
 
+        },
+        showEmojiToggle() {
+            this.showEmoji = !this.showEmoji
+        },
+
+        addEmoji(emoji) {
+            this.title += emoji
         }
     }
 }
 </script>
+<style scoped>
+form {
+    position: relative;
+}
+
+.emoji-button {
+    margin: 0 8px;
+    color: #e9e9e9;
+}
+
+.emoji-picker {
+    background: url('@/assets/img/happy.png');
+}
+</style>
