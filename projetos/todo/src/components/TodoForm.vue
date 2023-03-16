@@ -19,41 +19,50 @@ focus:outline-none" type="submit" >
     <EmojiPicker v-if="showEmoji" @emoji_click="addEmoji"/>
 </template>
 <script>
+
 import EmojiPicker from '@/components/EmojiPicker.vue'
+import { ref } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
     components: {
         EmojiPicker
     },
-    data() {
+    setup() {
+        const title = ref('')
+        const store = useStore()
+        const showEmoji = ref(false)
+        const addTodo = () => {
+            if (!title.value) {
+                return false
+            }
+            if (showEmoji.value) {
+                showEmojiToggle()
+            }
+            store.dispatch('addTodo', {
+                title: title.value,
+                completed: false
+            }).finally(() => {
+                title.value = ''
+            })
+
+        }
+        const showEmojiToggle = () => {
+            showEmoji.value = !showEmoji.value
+        }
+
+        const addEmoji = (emoji) => {
+            title.value += emoji
+        }
         return {
-            title: '',
-            showEmoji: false
+            title,
+            showEmoji,
+            addTodo,
+            showEmojiToggle,
+            addEmoji,
         }
     },
     methods: {
-        addTodo() {
-            if (!this.title) {
-                return false
-            }
-            if (this.showEmoji) {
-                this.showEmojiToggle()
-            }
-            this.$store.dispatch('addTodo', {
-                title: this.title,
-                completed: false
-            }).finally(() => {
-                this.title = ''
-            })
-
-        },
-        showEmojiToggle() {
-            this.showEmoji = !this.showEmoji
-        },
-
-        addEmoji(emoji) {
-            this.title += emoji
-        }
     }
 }
 </script>

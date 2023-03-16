@@ -4,7 +4,7 @@
 border-gray-400 last:border-b-0">
             <div class="flex items-center justify-center 
 mr-2">
-<button :class="{'text-green-600': isCompleted,'text-gray-400': !isCompleted,}" @click="onCheckClick">
+                <button :class="{ 'text-green-600': isCompleted, 'text-gray-400': !isCompleted, }" @click="onCheckClick">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
@@ -15,7 +15,7 @@ mr-2">
 
             <div class="w-full">
                 <input type="text" placeholder="Digite a sua tarefa" v-model="title"
-                    :class="[isCompleted? isCompletedStroke : '', ' bg-gray-300 placeholder-gray-500 text-gray-700 font-light focus:outline-none block w-full appearance-none leading-normal mr-3']"
+                    :class="[isCompleted ? isCompletedStroke : '', ' bg-gray-300 placeholder-gray-500 text-gray-700 font-light focus:outline-none block w-full appearance-none leading-normal mr-3']"
                     @keyup.enter="onTitleChange">
             </div>
 
@@ -37,6 +37,9 @@ justify-center">
 </template>
 
 <script>
+import { ref } from 'vue'
+import { useStore } from 'vuex'
+
 
 export default {
     props: {
@@ -45,39 +48,42 @@ export default {
             default: () => ({})
         }
     },
-    data() {
-        return {
-            title: this.todo.title,
-            isCompleted: this.todo.completed,
-            isCompletedStroke: 'line-through'
-        }
-    },
-    methods: {
-        onTitleChange($evt) {
-            const newTitle = $evt.target.value
-            if (!newTitle) {
+    setup(props) {
+        const store = useStore()
+        const title = ref(props.todo.title)
+        const isCompleted = ref(props.todo.completed)
+        const isCompletedStroke = ref('line-through')
+        const onTitleChange = () => {
+            if (!title.value) {
                 return
             }
-            this.updateTodo()
+            updateTodo()
 
-        },
-
-        onCheckClick() {
-            this.isCompleted = !this.isCompleted
-            this.updateTodo()
-        },
-        updateTodo() {
+        }
+        const onCheckClick = () => {
+            isCompleted.value = !isCompleted.value
+            updateTodo()
+        }
+        const updateTodo = () => {
             const payload = {
-                id: this.todo.id,
+                id: props.todo.id,
                 data: {
-                    title: this.title,
-                    completed: this.isCompleted
+                    title: title.value,
+                    completed: isCompleted.value
                 }
             }
-            this.$store.dispatch('updateTodo', payload)
-        },
-        deleteTodo() {
-            this.$store.dispatch('deleteTodo', this.todo.id)
+            store.dispatch('updateTodo', payload)
+        }
+        const deleteTodo = () => {
+            store.dispatch('deleteTodo', props.todo.id)
+        }
+        return {
+            title,
+            isCompleted,
+            isCompletedStroke,
+            onTitleChange,
+            onCheckClick,
+            deleteTodo
         }
     }
 }
