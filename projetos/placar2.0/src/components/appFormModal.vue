@@ -33,19 +33,16 @@ function handleUpload(avatar){
                 <label for="newUser">Nome:</label>
                 <input type="text" name="newUser" v-model="newUser"
                     class="w-full bg-white rounded shadow-lg border-0 focus:ring-0 mt-2" required ref="el">
-                <div class="mt-4 flex">
+                                <div class="mt-4 flex">
 
-                    <button
-                        class="bg-indigo-600 px-5 py-2 rounded shadow-md text-white hover:shadow-lg hover:bg-indigo-400 flex justify-center flex-1"
-                        type="submit">
-
-
-                        Adicionar
-                    </button>
-                    <button
-                        class="bg-slate-200 px-5 py-2 rounded shadow-md text-indigo-600 border border-indigo-600 mx-4 hover:shadow-lg hover:bg-white flex justify-center flex-1"
-                        @click="store.toggleAddUser">
-
+                                    <button
+                                        class="bg-indigo-600 px-5 py-2 rounded shadow-md text-white hover:shadow-lg hover:bg-indigo-400 flex justify-center md:flex-1"
+                                            type="submit">
+                                            Adicionar
+                                        </button>
+                                        <button
+                                            class="bg-slate-200 px-5 py-2 rounded shadow-md text-indigo-600 border border-indigo-600 mx-4 hover:shadow-lg hover:bg-white flex justify-center md:flex-1"
+                                            @click="store.toggleAddUser">
                         Cancelar
                     </button>
 
